@@ -21,7 +21,7 @@ module Mail
       super
     end
 
-    def delivery_method(method = nil, settings = {})
+    def delivery_method(method = nil, **settings)
       return @delivery_method if @delivery_method && method.nil?
       @delivery_method = lookup_delivery_method(method).new(settings)
     end

@@ -7,7 +7,7 @@ describe "SMTP Delivery Method" do
   before(:each) do
     # Reset all defaults back to an original state
     Mail.defaults do
-      delivery_method :smtp, { :address              => "localhost",
+      delivery_method :smtp, **{ :address              => "localhost",
                                :port                 => 25,
                                :domain               => 'localhost.localdomain',
                                :user_name            => nil,

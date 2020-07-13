@@ -7,20 +7,19 @@ describe "SMTP Delivery Method" do
   before(:each) do
     # Reset all defaults back to original state
     Mail.defaults do
-      delivery_method :smtp, { :address              => "localhost",
-                               :port                 => 25,
-                               :domain               => 'localhost.localdomain',
-                               :user_name            => nil,
-                               :password             => nil,
-                               :authentication       => nil,
-                               :enable_starttls      => nil,
-                               :enable_starttls_auto => true,
-                               :openssl_verify_mode  => nil,
-                               :tls                  => nil,
-                               :ssl                  => nil,
-                               :open_timeout         => nil,
-                               :read_timeout         => nil
-                                }
+      delivery_method :smtp, address:             "localhost",
+                             port:                 25,
+                             domain:               'localhost.localdomain',
+                             user_name:            nil,
+                             password:             nil,
+                             authentication:       nil,
+                             enable_starttls:      nil,
+                             enable_starttls_auto: true,
+                             openssl_verify_mode:  nil,
+                             tls:                  nil,
+                             ssl:                  nil,
+                             open_timeout:         nil,
+                             read_timeout:         nil
     end
     MockSMTP.clear_deliveries
   end

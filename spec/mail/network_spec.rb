@@ -11,13 +11,13 @@ describe "Mail" do
   before(:each) do
     # Reset all defaults back to original state
     Mail.defaults do
-      delivery_method :smtp, { :address              => "localhost",
-                               :port                 => 25,
-                               :domain               => 'localhost.localdomain',
-                               :user_name            => nil,
-                               :password             => nil,
-                               :authentication       => nil,
-                               :enable_starttls_auto => true  }
+      delivery_method :smtp, address:              "localhost",
+                             port:                 25,
+                             domain:               'localhost.localdomain',
+                             user_name:            nil,
+                             password:             nil,
+                             authentication:       nil,
+                             enable_starttls_auto: true
 
       retriever_method :pop3, { :address             => "localhost",
                                 :port                => 110,
